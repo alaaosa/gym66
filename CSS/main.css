@@ -211,16 +211,19 @@ section .contain {
 color: antiquewhite;
     display: flex;
     justify-content: center;
-    align-items: center;
-    position: absolute;
+    /* align-items: center; */
+    position: relative;
     z-index: 50;
-    left: 40%;
-    margin: 3%;
+    /* left: 40%; */
+    margin: 3% auto;
     background-color: rgb(249, 108, 8);
-    padding: .5rem 1rem;
+    padding: auto .5rem;
     border-radius: 7%;
     box-shadow: -.5px -.3px 8px rgb(168, 166, 163);
     text-transform: uppercase;
+    width: 12rem;
+    max-width: 14em;
+    top:1em;
 }
 
 .card:hover{
@@ -249,10 +252,13 @@ color: antiquewhite;
 }
 
 .card img{
-    width: 14em;
+    width: 70%;
+    max-width: 14em;
     height: 160px;
     position: absolute;
-    top:3em;
+    top:2em;
+    display: block;
+    margin: 0 auto;
 }
     @keyframes growTextt {
     0% {
@@ -271,11 +277,41 @@ color: antiquewhite;
 
 /* استعلام الوسائط للشاشات الصغيرة */
 @media (max-width: 768px) {
+    body,html{
+        overflow-x: hidden;
+    }
     .contain .desc {
     left: 28%;
         top: 38%;
         font-size: .8rem;
     }
+
+    .services .content{
+        gap:1rem;
+    }
+
+    .card{
+        width: auto;
+    }
+
+    .card img{
+    margin: 0 auto;
+    }
+
+    .container-services{
+        height: 150vh;
+    }
+
+    /* .container-services .title{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    } */
+
+        .services .content{
+            grid-template-columns: 1fr;
+        }
+
 
     .contain .name {
         /* left: 5%; */
@@ -301,14 +337,14 @@ color: antiquewhite;
 
         .menu-icon{
         right:6em;
-        top: 1rem;
-                height: 2.5rem;
-                    width: 2.5rem;
+        top: -1em;
+        height: 2.5rem;
+        width: 2.5rem;
         }
 
     
     .user-icon {
-        top: 1rem;
+        top: -1em;
         right: 2rem;
         /* Adjust position for small screens */
         height: 2.5rem;
